@@ -5,20 +5,22 @@
 \usepackage[letterpaper,top=3cm,bottom=3cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=gray]{hyperref}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
 
 
 
 
-\title{GCPP}
-\author{Luigi Nacchia\\matricola : 0512105854}
+\title{Università degli studi di Salerno
+        \\Fondamenti di Intelligenza Artificiale
+        \\ GCPP : Graphic Card Price Predictor}
+\author{autore: Luigi Nacchia\\matricola: 0512105854}
 \date{}
 
 \begin{document}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.25\linewidth]{logo_unisa.png}
+    \includegraphics[width=0.95\linewidth]{logo_unisa.png}
 \end{figure}
 
 \maketitle
@@ -28,14 +30,51 @@
 
 \newpage
 \section{Introduzione}
+Negli ultimi anni, l'aumento esponenziale di mining farm e dello sviluppo modelli ML da addestrare ha portato ad un massiccio aumento della domanda di componenti hardware necessarie per tali attività, con conseguente aumento dei loro prezzi.
+
     \subsection{Obiettivi}
+    Questo progetto di Fondamenti di Intelligenza Artificiale si propone di sviluppare un predittore del prezzo di lancio di nuove componenti, basato sulle caratteristiche ed i prezzi di lancio passati.
+    \\
+    Con prezzo di lancio s'intende il prezzo di vendita in dollari dei produttori originali delle schede grafiche(Nvidia, Amd e Intel) nel momento in cui vengono annunciate al pubblico.
+    \\
+    Gli obbiettivi principali del progetto includono:
+    \begin{itemize}
+        \item un'analisi dei dati delle schede grafiche già lanciate 
+        \item l'identificazione delle feature più rilevanti
+        \item l'implementazione di un modello di machine learning in grado di fare predizioni sul prezzo di lancio di nuove schede grafiche non ancora lanciate.
+    \end{itemize}
+    
     \subsection{Specifica PEAS}
+        \begin{itemize}
+        \item Performance (misura di prestazioni): precisione e accuratezza del modello
+        \item Enviroment (ambiente): i vari datasets delle gpu già lanciate
+        \item Actuators (azioni possibili): prevedere un prezzo di una nuova gpu
+        \item Sensors (percezioni possibili): acquisizione di dati utili per la predizione
+        \end{itemize}
     \subsection{Caratteristiche dell'ambiente}
+        \begin{itemize}
+        \item Completamente osservabile, in quanto si conoscono tutte le informazioni sulle gpu già lanciate.
+        \item Deterministico, in quanto ogni predizione è influenzata dai dati su cui il modello viene addestrato.
+        \item Episodico, in quanto ogni predizione non influenza le predizioni future. 
+        \item Statico, in quanto l'ambiente(dataset) non cambia dopo una predizione.
+        \item Continuo, in quanto non c'è un limite al numero di possibili predizioni
+        \end{itemize}
+    
     \subsection{Analisi del problema}
+    GCPP mira a costruire un predittore di prezzi, si tratta quindi di un problema di apprendimento supervisionato.
+    Le tecnologie che ho utilizzato per lo sviluppo del progetto sono:
+        \begin{itemize}
+        \item Python (SickitLearn, Pandas),
+        \item Google Colab (notebook)
+        \item GitHub (versioning)
+        \item Overleaf (documentazione in \LaTeX)
+        \end{itemize}
 
 \newpage
-    \section{Data Understanding}
+\section{Data Understanding}
     \subsection{Acquisizione dei dati}
+    L'acquisizione dei dati è il processo di raccolta, ed organizzazione dei dati necessari per andare a creare un modello di ML. 
+    Con gli obiettivi chiari e definiti, sono andato alla ricerca di un dataset su Kaggle
     \subsection{Esplorazione dei dati}
     \subsection{Analisi della qualità dei dati}
 
@@ -57,9 +96,6 @@
 
 \newpage
 \section{Deployment}
-
-
-\end{document}
 
 
 \end{document}
